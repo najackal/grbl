@@ -21,9 +21,9 @@ X_AR = $(XTOOLS_DIR)/bin/arm-none-eabi-ar
 X_LD = $(XTOOLS_DIR)/bin/arm-none-eabi-ld
 X_GDB = $(XTOOLS_DIR)/bin/arm-none-eabi-gdb
 
-OUT_DIR = debug
+OUT_DIR = "build"
 
-OUTPUT = grbl-stm32
+OUTPUT = "grbl-stm32"
 
 SRC= ./cmsis_boot/startup/startup_stm32f10x_md.c \
      ./cmsis_boot/system_stm32f10x.c \
@@ -95,7 +95,7 @@ CFLAGS += -mthumb
 CFLAGS += -mcpu=cortex-m3
 
 # linker flags
-LDSCRIPT = STM32F103C8T6.ld
+LDSCRIPT = STM32.ld
 LDFLAGS = -T$(LDSCRIPT) -Wl,-Map,$(OUT_DIR)/$(OUTPUT).map -Wl,--gc-sections
 
 # defines
